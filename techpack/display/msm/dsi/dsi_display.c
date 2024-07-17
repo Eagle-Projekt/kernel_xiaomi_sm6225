@@ -7254,8 +7254,9 @@ int dsi_display_set_mode(struct dsi_display *display,
 		goto error;
 	}
 
-#ifdef CONFIG_TARGET_PROJECT_K7T
-	if (display->panel->panel_initialized && (adj_mode.timing.refresh_rate == 90)) {
+
+#ifdef CONFIG_TARGET_PROJECT_C3Q
+	if (display->panel->panel_initialized && (adj_mode.timing.refresh_rate > 60)) {
 		dsi_set_backlight_control(display->panel, &adj_mode);
 	}
 #endif
