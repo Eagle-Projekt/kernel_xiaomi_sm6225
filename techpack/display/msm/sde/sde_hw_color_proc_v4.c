@@ -300,6 +300,9 @@ if (kcal_red < kcal_min)
 		SDE_REG_WRITE(&ctx->hw, base + PCC_RGB_OFF, coeffs->rgb);
 	}
 
+
+SDE_REG_WRITE(&ctx->hw, ctx->cap->sblk->pcc.base, PCC_EN);
+}
 opcode = SDE_REG_READ(&ctx->hw, ctx->cap->sblk->hsic.base);
 
 	// HUE
