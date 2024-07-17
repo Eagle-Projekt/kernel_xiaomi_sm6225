@@ -34,10 +34,10 @@
 #define DSI_CLOCK_BITRATE_RADIX 10
 #define MAX_TE_SOURCE_ID  2
 
-#ifdef CONFIG_TARGET_PROJECT_K7T
+// #ifdef CONFIG_TARGET_PROJECT_K7T
 extern void dsi_set_backlight_control(struct dsi_panel *panel,
 			 struct dsi_display_mode *adj_mode);
-#endif
+// #endif
 
 static char dsi_display_primary[MAX_CMDLINE_PARAM_LEN];
 static char dsi_display_secondary[MAX_CMDLINE_PARAM_LEN];
