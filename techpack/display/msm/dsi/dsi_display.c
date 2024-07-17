@@ -7253,12 +7253,11 @@ int dsi_display_set_mode(struct dsi_display *display,
 		DSI_ERR("[%s] failed to set mode\n", display->name);
 		goto error;
 }
-	
- #ifdef CONFIG_TARGET_PROJECT_K7T
+#ifdef CONFIG_TARGET_PROJECT_K7T
 	if (display->panel->panel_initialized && (adj_mode.timing.refresh_rate == 90)) {
 		dsi_set_backlight_control(display->panel, &adj_mode);
 	}
- #endif
+#endif
 
 	DSI_INFO("mdp_transfer_time_us=%d us\n",
 			adj_mode.priv_info->mdp_transfer_time_us);
